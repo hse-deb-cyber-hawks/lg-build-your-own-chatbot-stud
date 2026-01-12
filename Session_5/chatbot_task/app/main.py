@@ -24,16 +24,16 @@ if "bot" not in st.session_state:
     st.session_state["bot"] = CustomChatBot(index_data=bool(int(INDEX_DATA)), pull_embedding_model=bool(int(PULL_EMBEDDING_MODEL)))
 
 # Streamlit UI setup
-st.set_page_config(page_title="ChatDoc", page_icon="📄")
-st.header("Chat with your Document")
+st.set_page_config(page_title="PhishingGPT", page_icon="🤖")
+st.header("PhishingGPT - We definitely NOT steal your data!")
 
 # Initialize session state
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [ChatMessage(role="assistant", content="How can I help you?")]
+    st.session_state["messages"] = [ChatMessage(role="assistant", content="Jojojo, whats up? How can I help you?")]
 
 if len(st.session_state["messages"]) == 0 or st.sidebar.button("Clear message history"):
     st.session_state["messages"].clear()
-    st.session_state["messages"] = [ChatMessage(role="assistant", content="How can I help you?")]
+    st.session_state["messages"] = [ChatMessage(role="assistant", content="Jojojo, whats up? How can I help you?")]
 
 # Display chat messages
 for msg in st.session_state.messages:
